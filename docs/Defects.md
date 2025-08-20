@@ -22,7 +22,7 @@ This file documents defects found during testing of the ParaBank application.
 -   
   
 **Screenshot:**  
-./assets/defects/Screenshot (815).png
+https://github.com/brea351/parabank-qa-testing/blob/main/docs/assets/Screenshot%20(815).png
 
 
 ---
