@@ -20,8 +20,10 @@ This file documents defects found during testing of the ParaBank application.
 - **Date**: 2025-08-20
 
 -   
+  
 **Screenshot:**  
-![Screenshot](../assets/defects/login.png)
+![Account Dropdown Defect](./assets/defects/account-dropdown.png)
+
 
 ---
 
