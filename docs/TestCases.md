@@ -80,14 +80,12 @@
 
 
 
-## 7. Customer Service Requests Test Cases
+## 7. Update Contact Info Test Cases
 
-| Test Case ID | Test Scenario | Test Steps | Test Data | Expected Result |
-|--------------|--------------|------------|-----------|-----------------|
-| CS-01 | Verify customer can submit a service request | Login → Navigate to Contact / Customer Service → Fill in request form → Submit | Subject: "Issue with Login", Message: "Unable to login with valid credentials" | Confirmation message displayed: "Your request has been submitted successfully". |
-| CS-02 | Verify mandatory fields validation on service request form | Login → Navigate to Contact / Customer Service → Leave required fields empty → Submit | Empty Subject & Message | Error message displayed: "Subject and Message are required". |
-| CS-03 | Verify service request accepts attachments (if supported) | Login → Navigate to Customer Service → Upload file → Submit | File: screenshot.png | Request submitted successfully with attachment. |
-| CS-04 | Verify user can view previously submitted requests (if supported) | Login → Navigate to Service Requests → View request history | N/A | List of submitted service requests displayed with status (Open/Closed). |
-| CS-05 | Verify request submission with large input data | Login → Navigate to Customer Service → Enter long message (e.g., 500+ chars) → Submit | Subject: "Technical Issue", Message: long text | Request submitted successfully, system handles large input gracefully. |
+| Test Case ID | Test Scenario | Test Steps | Test Data | Expected Result | Status |
+|--------------|---------------|------------|-----------|-----------------|--------|
+| UCI-001 | Update contact info with valid details | 1. Login <br> 2. Navigate to "Update Contact Info" <br> 3. Enter new address, phone, and email <br> 4. Submit | Address: "123 New Street" <br> Phone: "1234567890" <br> Email: "user@example.com" | Contact info updated successfully, confirmation message displayed | Pass |
+| UCI-002 | Update contact info with invalid phone number | 1. Login <br> 2. Navigate to "Update Contact Info" <br> 3. Enter phone number in wrong format <br> 4. Submit | Phone: "abc123" | Error message displayed: "Invalid phone number" | Fail |
+| UCI-003 | Leave mandatory fields blank | 1. Login <br> 2. Navigate to "Update Contact Info" <br> 3. Leave email field blank <br> 4. Submit | Email: "" | Error message displayed: "Email is required" | Fail |
 
 
