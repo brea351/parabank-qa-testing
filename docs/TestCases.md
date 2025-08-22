@@ -54,17 +54,17 @@
 | RL-05 | Verify loan approval updates account balance (if business rule applies) | Login → Navigate to Request Loan → Enter valid Loan Amount and Down Payment → Click Apply | Loan Amount: 2000 <br> Down Payment: 500 | If approved, account credited with loan amount minus down payment. Loan details visible in account. |
 
 
-
-## 5. Fund Transfer Test Cases
+## 5. Bill Payment Test Cases
 
 | Test Case ID | Test Scenario | Test Steps | Test Data | Expected Result |
 |--------------|--------------|------------|------------|-----------------|
-| FT-01 | Verify successful fund transfer between accounts | Login → Navigate to Transfer Funds → Enter valid amount → Select From Account and To Account → Click Transfer | From Account: 123456 <br> To Account: 654321 <br> Amount: 500 | Transfer successful. Confirmation message displayed. Balance updated in both accounts. |
-| FT-02 | Verify error when mandatory fields are blank | Login → Navigate to Transfer Funds → Leave Amount or Accounts blank → Click Transfer | Amount: [blank] | Error message displayed: "All fields are required". |
-| FT-03 | Verify error when transferring amount greater than available balance | Login → Navigate to Transfer Funds → Enter amount larger than balance → Click Transfer | Amount: 100000 | Error message displayed: "Insufficient funds". |
-| FT-04 | Verify error when transferring negative or zero amount | Login → Navigate to Transfer Funds → Enter 0 or negative number → Click Transfer | Amount: 0 | Error message displayed: "Enter a valid amount greater than zero". |
-| FT-05 | Verify same account transfer validation | Login → Navigate to Transfer Funds → Select the same account for From and To → Click Transfer | From Account: 123456 <br> To Account: 123456 <br> Amount: 100 | Error message displayed: "Source and destination accounts must be different". |
-| FT-06 | Verify transaction appears in Transaction History after successful transfer | Perform a successful transfer → Navigate to Transaction History | From Account: 123456 <br> To Account: 654321 <br> Amount: 500 | Transaction recorded correctly with details (amount, date, from, to). |
+| BP-01 | Verify successful bill payment with valid details | Login → Navigate to Bill Pay → Enter Payee details → Enter account number → Enter amount → Click Send Payment | Payee: John Doe <br> Account: 123456 <br> Amount: 200 | Payment success message displayed. Payee added to payee list. |
+| BP-02 | Verify error when mandatory fields are left blank | Login → Navigate to Bill Pay → Leave Payee name and account number blank → Click Send Payment | Payee: [blank] <br> Account: [blank] <br> Amount: 100 | Error message displayed: "All fields are required". |
+| BP-03 | Verify error when invalid account number is entered | Login → Navigate to Bill Pay → Enter invalid account number → Enter amount → Click Send Payment | Account: abc123 <br> Amount: 150 | Error message displayed: "Invalid account number". |
+| BP-04 | Verify error when amount is left blank | Login → Navigate to Bill Pay → Enter Payee details → Leave amount blank → Click Send Payment | Payee: John Doe <br> Account: 123456 <br> Amount: [blank] | Error message displayed: "Amount is required". |
+| BP-05 | Verify that bill payment reduces account balance | Login → Navigate to Bill Pay → Enter valid details → Confirm payment | Initial Balance: 500 <br> Payment: 200 | Balance reduced by payment amount. Confirmation message displayed. |
+
+
 
 
 ## 6. Transaction History Test Cases
