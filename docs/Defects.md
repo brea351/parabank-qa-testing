@@ -20,8 +20,10 @@ This file documents defects found during testing of the ParaBank application.
 - **Date**: 2025-08-20
 
 -   
+  
 **Screenshot:**  
-![Screenshot](../assets/defects/login.png)
+https://github.com/brea351/parabank-qa-testing/blob/main/docs/assets/Screenshot%20(815).png
+
 
 ---
 
