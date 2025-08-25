@@ -1,0 +1,27 @@
+{
+  "name": "parabank-qa-testing",
+  "version": "1.0.0",
+  "description": "This repository contains the **Quality Assurance (QA) project for ParaBank**, an online banking demo application.  \r The goal of this project is to test and validate the key functionalities of ParaBank using **manual, automated, API, and performance testing** techniques.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brea351/parabank-qa-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/brea351/parabank-qa-testing/issues"
+  },
+  "homepage": "https://github.com/brea351/parabank-qa-testing#readme",
+  "devDependencies": {
+    "cypress": "^15.0.0"
+  }
+}
