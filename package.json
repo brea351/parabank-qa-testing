@@ -1,0 +1,11 @@
+{
+  "name": "parabank-qa-testing",
+  "version": "1.0.0",
+  "description": "Cypress tests for Parabank",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^12.17.3"
+  }
+}
