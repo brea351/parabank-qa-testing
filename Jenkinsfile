@@ -2,13 +2,13 @@ pipeline {
     agent {
         docker {
             image 'cypress/included:12.17.3'
-            args '-u root:root' // run as root so we can install dependencies
+            args '--entrypoint="" -u root:root'
         }
     }
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'npm ci'
+                sh 'npm install'
             }
         }
         stage('Run Cypress Tests') {
@@ -23,4 +23,3 @@ pipeline {
         }
     }
 }
-
