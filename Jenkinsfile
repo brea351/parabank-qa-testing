@@ -1,41 +1,33 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
+    agent {
+        docker {
+            image 'cypress/included:12.17.3'  // has Node, npm, Cypress + Chrome
+            args '-u root:root'
         }
-
+    }
+    stages {
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
             }
         }
-
         stage('Run API Tests') {
             steps {
-                sh 'npm run test:api'
+                sh 'npx cypress run --spec "cypress/e2e/api/*"'
             }
         }
-
         stage('Run UI Tests') {
             steps {
-                sh 'npm run test:ui'
+                sh 'npx cypress run --spec "cypress/e2e/ui/*"'
             }
         }
-
         stage('Archive Reports') {
             steps {
-                archiveArtifacts artifacts: 'cypress/reports/**/*.html', fingerprint: true
+                junit '**/results/*.xml'
+                archiveArtifacts artifacts: '**/cypress/screenshots/**', allowEmptyArchive: true
+                archiveArtifacts artifacts: '**/cypress/videos/**', allowEmptyArchive: true
             }
-        }
-    }
-
-    post {
-        always {
-            junit 'cypress/results/*.xml'  // if you configure junit reporter
         }
     }
 }
+
